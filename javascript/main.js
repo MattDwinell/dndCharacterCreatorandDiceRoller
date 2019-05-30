@@ -23,6 +23,7 @@ $(document).ready(function () {
             $("#sign-in-message").text("please input both email and password to sign in, or create one by registering an account.");
         } else {
             firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+                console.log(error, error.message);
                 $("#sign-in-message").text(error.message);
             });
         }
@@ -50,8 +51,9 @@ $(document).ready(function () {
 
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
+            $("#welcome-banner").text("Welcome to the Character Creator, " + user.email + "!" );
 
-            console.log(user);
+            console.log(user, user.email);
             $("#sign-in-wrapper").css("display", "none");
             $("#app-wrapper").css("display", "block");
         } else {
