@@ -13,6 +13,37 @@ $(document).ready(function () {
 
     database = firebase.database();
     console.log('this working');
+
+
+
+
+
+    //on click events
+    $("#char-view").on("click", viewChar);
+    function viewChar(){
+        console.log('this working');
+    }
+    $("#char-create").on("click", makeChar);
+    function makeChar(){
+        console.log('this working');
+    }
+    $("#dice").on("click", genDice);
+    function genDice(){
+        console.log('this working');
+        window.location.href= "./dice.html";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     //firebase authentication stuff:
     $("#sign-in").on("click", function (event) {
         event.preventDefault();
@@ -49,6 +80,13 @@ $(document).ready(function () {
     })
 
 
+
+
+
+
+
+
+    //firebase on user login stuff
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             $("#welcome-banner").text("Welcome to the Character Creator, " + user.email + "!" );
@@ -60,9 +98,7 @@ $(document).ready(function () {
             console.log("test");
             $("#sign-in-wrapper").css("display", "block");
             $("#app-wrapper").css("display", "none");
-
         }
-
     })
 
 
