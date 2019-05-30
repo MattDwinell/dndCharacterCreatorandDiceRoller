@@ -1,3 +1,27 @@
-h1{
+.sign-out{
+    float:right;
+    top: 10px;
+
+    padding: 2px;
+    right: 10px;
+   
+}
+body{
+    background-image: url('../images/fantasy_background_1.jpg');
+    background-size: cover;
+}
+#sign-in-wrapper{
+    padding:5px 0px;;
+    
+    display:block;
+}
+#form-wrapper{
+    padding: 5px 5px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    
+}
+#app-wrapper{
+    display:none;
     text-align: center;
 }

@@ -8,14 +8,46 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.4.0.js"
         integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+        <link rel="icon" href="images/rightfist.png.png">
     <title> Character Creator</title>
 </head>
 <body>
-    <h1> hello world</h1>
+        <button class="btn waves-effect waves-light sign-out">Sign out</button>
+        <div class="container" id="sign-in-wrapper">
+            <div class="row">
+                <div class="col s3">
+                    <img src="images/columns3.png" height="auto" width="100%">
+                </div>
+                <div class="col s6 blue lighten-5" id="form-wrapper">
+                    <form>
+                        <h5 id="sign-in-message"> APPEND YOUR INFORMATION TO BEGIN, MORTAL.</h4>
+                            <input type="text" placeholder="email" id="email" class="light-green lighten-3">
+                            <input type="password" placeholder="password" id="password" class="light-green lighten-3">
+                            <button class="btn waves-effect waves-light" id="sign-in"> Sign in</button>
+                            <button class="btn waves-effect waves-light" id="register">Register</button>
+                    </form>
     
+                </div>
+                <div class="col s3">
+                    <img src="images/columns3.png" height="auto" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class='container' id='app-wrapper'>
+            <div class= 'row'>
+                <div class= 'col s12 light-green'> Welcome to DND character Creator!</div>
+            </div>
 
+
+
+
+        </div>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
 <script src='javascript/main.js'></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
 
 </body>
 </html>
