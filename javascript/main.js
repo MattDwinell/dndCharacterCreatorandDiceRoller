@@ -32,6 +32,10 @@ $(document).ready(function () {
         console.log('this working');
         window.location.href= "./dice.html";
     }
+    $(".return").on("click", mainPage);
+    function mainPage(){
+        window.location.href= "./index.html";
+    }
 
 
 
@@ -90,6 +94,7 @@ $(document).ready(function () {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             $("#welcome-banner").text("Welcome to the Character Creator, " + user.email + "!" );
+            $(".welcome").text("Welcome to the Dice Roller, " + user.email);
 
             console.log(user, user.email);
             $("#sign-in-wrapper").css("display", "none");
