@@ -1,0 +1,54 @@
+.welcome{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid green;
+    border-radius: 3px;
+}
+.return{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin:10px;
+    padding: 10px;
+    float:right;
+    border: 2px solid blue;
+    border-radius: 2px;
+}
+body{
+    background-image: url('../images/fantasy_background_2.jpg');
+    background-size: cover;
+    box-sizing: border-box;
+}
+#dice-options{
+    padding-top:5px;
+    padding-bottom: 5px;
+    margin-top:10px;
+}
+#d4, #d6, #d8, #d10, #d12, #d20{
+    font-weight: 600;
+    padding: 4px 0px;
+    margin: 10px auto;
+    text-align: center;
+    border: 2px solid purple;
+    border-radius: 3px;
+}
+#d4, #d6, #d8, #d10, #d12, #d20, .return, .sign-out :hover{
+    cursor: pointer;
+}
+.weighting{
+    font-style: oblique;
+    padding:2px;
+    border:1px solid orange;
+    border-radius: 2px;
+}
+.options{
+    font-weight: 300;
+    display:inline;
+    max-width: 50%;
+    margin: 10px auto;
+    border:2px solid purple;
+    border-radius: 3px;
+    text-align:center;
+}

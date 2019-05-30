@@ -1,14 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="images/d20_icon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <!-- <link rel="stylesheet" href="css/style.css" type="text/css"> -->
+    <link rel='stylesheet' href="css/dice-style.css" type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.4.0.js"
+        integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
     <title>Dice</title>
 </head>
+
 <body>
-    <h1>test</h1>
-    
+    <div class='container'>
+        <div class='row'>
+            <div class='col s8 light-green welcome'>
+                Welcome to the Dice Roller
+            </div>
+            <div class='col s3 light-blue return'>Return to Main Page</div>
+        </div>
+        <div class='row'>
+            <div class='col s4'>
+                <div class='row' id='dice-options'>
+                    <div class='col s12 purple lighten-4 options'>
+                        Choose a die
+                    </div>
+                    <div class='col s11 purple lighten-3' id='d4'>
+                        Roll a D4
+                    </div>
+                    <div class='col s11 purple lighten-3' id='d6'>
+                        Roll a D6
+                    </div>
+                    <div class='col s11 purple lighten-3' id='d8'>
+                        Roll a D8
+                    </div>
+                    <div class='col s11 purple lighten-3' id='d10'>
+                        Roll a D10
+                    </div>
+                    <div class='col s11 purple lighten-3' id='d12'>
+                        Roll a D12
+                    </div>
+                    <div class='col s11 purple lighten-3' id='d20'>
+                        Roll a D20
+                    </div>
+                </div>
+            </div>
+            <div class='col s4'>
+                <div class='row'>
+                    <div class='col s12 red lighten-4 weighting'> We're weighting....</div>
+                    <div class='col s11' id='diceDump'>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class='col s4'>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src='javascript/main.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
 </body>
+
 </html>
