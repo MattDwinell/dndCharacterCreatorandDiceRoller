@@ -13,6 +13,7 @@ $(document).ready(function () {
 
     database = firebase.database();
     console.log('this working');
+    var messageCount = 1;
 
 
 
@@ -20,22 +21,65 @@ $(document).ready(function () {
 
     //on click events
     $("#char-view").on("click", viewChar);
-    function viewChar(){
+    function viewChar() {
         console.log('this working');
     }
     $("#char-create").on("click", makeChar);
-    function makeChar(){
+    function makeChar() {
         console.log('this working');
     }
     $("#dice").on("click", genDice);
-    function genDice(){
+    function genDice() {
         console.log('this working');
-        window.location.href= "./dice.html";
+        window.location.href = "./dice.html";
     }
     $(".return").on("click", mainPage);
-    function mainPage(){
-        window.location.href= "./index.html";
+    function mainPage() {
+        window.location.href = "./index.html";
     }
+    $("#d4").on("click", rollDie);
+    $("#d6").on("click", rollDie);
+    $("#d8").on("click", rollDie);
+    $("#d10").on("click", rollDie);
+    $("#d12").on("click", rollDie);
+    $("#d20").on("click", rollDie);
+    $("#d100").on("click", rollDie);
+
+
+
+
+    function rollDie(element) {
+        showDie();
+        var diceSize = element.target.id;
+        var diceNum = parseFloat(diceSize.substr(1));
+        console.log(diceNum);
+        var dieRoll = Math.ceil(Math.random() * diceNum);
+        console.log(dieRoll);
+        rollDisplay(diceSize, dieRoll);
+    }
+
+    function rollDisplay(maxNum, ActualNum) {
+        var rollMessage = $("<p>").text('rolled a(n) ' + ActualNum + ' using a ' + maxNum).attr("class", "roll-message");
+        $("#roll-holder").prepend(rollMessage);
+        messageCount++;
+        rollScrubber();
+    }
+    function rollScrubber() {
+
+        if (messageCount > 7) {
+            var dialogBox = document.getElementById("roll-holder");
+            dialogBox.removeChild(dialogBox.childNodes[8]);
+        }
+    }
+    function showDie() {
+        console.log('die being shown');
+        $("#dicePic").attr("src", "./images/moving_d20.gif");
+        setTimeout(stillDie, 1000);
+    }
+    function stillDie() {
+        $("#dicePic").attr("src", "./images/d20_still_2.png");
+    }
+
 
 
 
@@ -93,7 +137,7 @@ $(document).ready(function () {
     //firebase on user login stuff
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            $("#welcome-banner").text("Welcome to the Character Creator, " + user.email + "!" );
+            $("#welcome-banner").text("Welcome to the Character Creator, " + user.email + "!");
             $(".welcome").text("Welcome to the Dice Roller, " + user.email);
 
             console.log(user, user.email);
@@ -116,4 +160,3 @@ $(document).ready(function () {
 
 })
 
-   

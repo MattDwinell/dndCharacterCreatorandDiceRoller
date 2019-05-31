@@ -26,7 +26,7 @@ body{
     padding-bottom: 5px;
     margin-top:10px;
 }
-#d4, #d6, #d8, #d10, #d12, #d20{
+#d4, #d6, #d8, #d10, #d12, #d20, #d100{
     font-weight: 600;
     padding: 4px 0px;
     margin: 10px auto;
@@ -34,7 +34,7 @@ body{
     border: 2px solid purple;
     border-radius: 3px;
 }
-#d4, #d6, #d8, #d10, #d12, #d20, .return, .sign-out :hover{
+#d4, #d6, #d8, #d10, #d12, #d20, #d100, .return, .sign-out :hover{
     cursor: pointer;
 }
 .weighting{
@@ -68,4 +68,11 @@ body{
     text-align: center;
     border-radius: 2px;
     color:white;
+}
+.roll-message{
+    border:1px solid #283593;
+    color:white;
+}
+#dicePic{
+    margin-top: 15px;
 }
