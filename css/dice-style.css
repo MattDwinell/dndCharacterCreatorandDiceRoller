@@ -76,3 +76,12 @@ body{
 #dicePic{
     margin-top: 15px;
 }
+#num-of-dice{
+    border: 2px solid purple;
+    border-radius: 2px;
+    text-align: center;
+    margin-right: 9%;
+    max-height:22px;
+    margin-top:10px;
+    float:right;
+}
