@@ -1,0 +1,69 @@
+body{
+    background-image: url('../images/fantasy_background_3.jpg');
+    background-size: cover;
+    box-sizing: border-box;
+}
+.welcome-maker{
+    text-align: center;
+    opacity: .5;
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid orangered;
+    border-radius: 3px;
+}
+  #submit-char, .return, .sign-out :hover{
+    cursor: pointer;
+}
+.return{
+    opacity: .5;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin:10px;
+    padding: 10px;
+    float:right;
+    border: 2px solid blue;
+    border-radius: 2px;
+}
+.stat{
+    max-height: 24px;
+    opacity:.75;
+    border:1px solid lightblue;
+    border-radius:3px;
+    text-align: center;
+}
+.stat-descriptor{
+    color:white;
+    border:1px solid grey;
+    opacity: 0.70;
+    border-radius: 3px;
+}
+#con, #str, #dex, #int, #wis, #cha, #ac, #spd, #max-hp, #init, #char-name, #char-inventory, #char-personality, #char-background, #char-alignment, #char-level, #char-class{
+    border: 2px solid rgba(0,0,0,.3);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+#stat-banner{
+    margin: 0 auto;
+    text-align: center;
+    max-width: 40%;
+}
+.new-char-message{
+    color:white;
+    opacity:.8;
+    border:2px solid black;
+    border-radius:3px;
+    padding:3px;
+}
+#submit-char{
+    padding:5px;
+    margin-left:10%;
+    color:white;
+    font-weight: bolder;
+    border: 2px solid grey;
+    border-radius: 3px;
+    text-align: center;
+}
