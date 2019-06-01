@@ -14,6 +14,24 @@ $(document).ready(function () {
     database = firebase.database();
     console.log('this working');
     var messageCount = 1;
+    const CharConst = function(str, dex, con, int, wis, cha, ac, spd, hp, init, charName, charClass, charLevel, charAlignment, charBackground,charPersonality, charInventory){
+        this.str= str;
+        this.dex= dex;
+        this.con = con;
+        this.int = int;
+        this.wis = wis;
+        this.cha = cha;
+        this.ac = ac;
+        this.spd= spd;
+        this.hp = hp;
+        this.init = init;
+        this.name = charName
+        this.raceClass = charClass;
+        this.level = charLevel;
+        this.alignment = charAlignment;
+        this.background = charBackground;
+
+    }
 
 
 
@@ -24,9 +42,10 @@ $(document).ready(function () {
     function viewChar() {
         console.log('this working');
     }
-    $("#char-create").on("click", makeChar);
-    function makeChar() {
+    $("#char-create").on("click", makeCharPage);
+    function makeCharPage() {
         console.log('this working');
+        window.location.href="./maker.html";
     }
     $("#dice").on("click", genDice);
     function genDice() {
@@ -44,6 +63,7 @@ $(document).ready(function () {
     $("#d12").on("click", rollDie);
     $("#d20").on("click", rollDie);
     $("#d100").on("click", rollDie);
+    $("#submit-char").on("click", makeChar);
 
 
 
@@ -98,7 +118,39 @@ $(document).ready(function () {
         $("#dicePic").attr("src", "./images/d20_still_2.png");
     }
 
-
+function makeChar(){
+    var str = $('#str').val();
+    var dex = $('#dex').val();
+    var con = $('#con').val();
+    var int = $('#int').val();
+    var wis = $('#wis').val();
+    var cha = $('#cha').val();
+    var ac = $('#ac').val();
+    var spd = $("#spd").val();
+    var hp = $('#max-hp').val();
+    var init = $('#init').val();
+    var charName = $("#char-name").val();
+    var charClass = $("#char-class").val();
+    var charLevel = $("#char-level").val();
+    var charAlignment = $("#char-alignment").val();
+    var charBackground = $("#char-background").val();
+    var charPersonality = $("#char-personality").val();
+    var charInventory = $("#char-inventory").val();
+    // dex, con, int, wis, cha, ac, spd, hp, init, charName, charLevel (add to if statement when done testing)
+    if(str){
+    
+    var tempChar = new CharConst(str, dex, con, int, wis, cha, ac, spd, hp, init, charName, charClass, charLevel, charAlignment,charBackground,charPersonality,charInventory);
+    console.log(tempChar);
+    
+     console.log(currentUser.uid);
+     console.log(currentUser.Id);
+    
+    database.ref('users/' + currentUser.uid ).push({
+        str: str,
+        dex: dex
+    })
+    }
+}
 
 
 
@@ -150,13 +202,16 @@ $(document).ready(function () {
 
 
 
-
+var currentUser;
 
     //firebase on user login stuff
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
+            currentUser = user;
+            console.log(currentUser);
             $("#welcome-banner").text("Welcome to the Character Creator, " + user.email + "!");
             $(".welcome").text("Welcome to the Dice Roller, " + user.email);
+            $(".welcome-maker").text("Forge a new character, " + user.email);
 
             console.log(user, user.email);
             $("#sign-in-wrapper").css("display", "none");
